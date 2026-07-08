@@ -1,18 +1,23 @@
 import { Link, NavLink } from "react-router-dom";
-import { Clapperboard, LogIn, Plus } from "lucide-react";
+import { LogIn, Plus } from "lucide-react";
 import { cn } from "../../utils/cn.js";
+import logo from "../../assets/logo.svg";
 
 export default function Navbar() {
   return (
     <header className="fixed inset-x-0 top-0 z-40 border-b border-white/10 bg-zinc-950/70 backdrop-blur-xl">
       <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8" aria-label="Primary">
         <Link to="/" className="flex items-center gap-3">
-          <span className="grid h-10 w-10 place-items-center rounded-lg bg-gradient-to-br from-blue-600 to-violet-600 shadow-lg shadow-blue-950/30">
-            <Clapperboard className="h-5 w-5" aria-hidden="true" />
-          </span>
-          <span className="text-lg font-extrabold tracking-tight">StreamSphere</span>
-        </Link>
+            <img
+              src={logo}
+              alt="StreamSphere Logo"
+                className="h-10 w-10"
+            />
 
+            <span className="text-lg font-extrabold tracking-tight">
+            StreamSphere
+            </span>
+        </Link>
         <div className="hidden items-center gap-1 md:flex">
           {[
             ["Features", "/#features"],
